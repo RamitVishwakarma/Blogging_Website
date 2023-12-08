@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogs</title>
+    <link rel="stylesheet" href="/styles.css" />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;1,300;1,400&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <div class="nav">
+      <div class="img">Logo</div>
+      <div class="about">About</div>
+      <div class="contact">Contact</div>
+      <div class="home">Home</div>
+    </div>
+    <div class="container">
+      <% for (let blog of blogs){ %>
+      <div class="cards">
+        <div class="img-cont">
+          <img class="postImg" src="<%=blog.image%>" alt="cat" alt="cat" />
+        </div>
+        <div class="title"><%=blog.title%></div>
+        <div class="desc">
+          <%=blog.content.para1.split(" ",20).join(" ").concat("...")%>
+        </div>
+      </div>
+      <%}%>
+    </div>
+  </body>
+</html>
