@@ -5,7 +5,7 @@ const dotenv = require("dotenv").config({
   path: path.resolve(__dirname, "../.env"),
 });
 const mongoose = require("mongoose");
-const initialposts = require("../Assets/blog_posts_recreated");
+const initialposts = require("../Assets/blog_posts");
 // const { title } = require("process");
 // const exp = require("constants");
 app.use(express.json());
