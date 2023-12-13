@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create A New Post</title>
+    <link rel="stylesheet" href="/styles.css" />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;1,300;1,400&display=swap"
+      rel="stylesheet" />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="https://res.cloudinary.com/dhkxbgwmt/image/upload/v1702112459/favicon_ar5nr1.svg" />
+  </head>
+
+  <body>
+    <!-- Nav Start -->
+    <div class="nav">
+      <div class="img">
+        <a href="/"
+          ><img
+            src="https://res.cloudinary.com/dhkxbgwmt/image/upload/v1702112459/Logo_czunhf.svg"
+            alt="Logo"
+            style="width: 250px; height: 10vh" />
+        </a>
+      </div>
+    </div>
+    <!-- Nav End -->
+    <!-- Form for creating the new post -->
+    <form
+      action="/posts"
+      method="POST"
+      enctype="multipart/form-data"
+      style="margin-top: 10vh">
+      <div>
+        <label for="author">Author:</label>
+        <input type="text" id="author" name="author" required />
+      </div>
+      <div>
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required />
+      </div>
+      <div>
+        <label for="para1">Paragraph 1:</label>
+        <textarea id="para1" name="para1" required></textarea>
+      </div>
+      <div>
+        <label for="para2">Paragraph 2:</label>
+        <textarea id="para2" name="para2" required></textarea>
+      </div>
+      <div>
+        <label for="para3">Paragraph 3:</label>
+        <textarea id="para3" name="para3" required></textarea>
+      </div>
+      <div>
+        <label for="listingImage">Listing Image:</label>
+        <input
+          type="file"
+          id="listingImage"
+          name="listingImage"
+          accept="image/png, image/jpeg, image/jpg" />
+      </div>
+      <button type="submit">Post</button>
+    </form>
+  </body>
+</html>

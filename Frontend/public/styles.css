@@ -2,9 +2,21 @@
   margin: 0;
   padding: 0;
   font-family: "Merriweather", serif;
+  scroll-behavior: smooth;
 }
 body {
   background-color: #1a1423;
+}
+.card-link {
+  text-decoration: none;
+}
+.nav a {
+  text-decoration: none;
+  color: #eacdc2;
+  font-size: 1.2em;
+}
+.img a {
+  text-decoration: none;
 }
 .nav {
   background-color: #372549;
@@ -13,16 +25,20 @@ body {
   z-index: 10;
   width: 100%;
   height: 10vh;
-  color: #fff;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
-.anchors {
+.anchor-container {
+  min-width: 35vw;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
-
+/* .anchors {
+  color: #eacdc2;
+  cursor: pointer;
+  font-size: 1.2em;
+} */
 .container {
   max-width: 1200px;
   height: 100vh;
@@ -32,10 +48,9 @@ body {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  row-gap: 30px;
+  row-gap: 1.875rem;
 }
 .cards {
-  /* box-sizing: border-box; */
   max-height: 450px;
   margin: 5px 20px;
   width: 20.625rem;
@@ -45,10 +60,19 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: flex-start; */
-  /* padding: auto; */
+  /* animation */
+  /* transform: translateY(5vh);
+  transition: transform 0.5s ease-out;
+  transition-delay: 0.5s; */
 }
-
+/* .cards.loaded {
+  transform: translateY(0);
+} */
+.cards:hover {
+  scale: 1.03;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
 .textContent {
   justify-content: center;
 }
@@ -58,16 +82,57 @@ body {
   border-radius: 20px 20px 0px 0px;
 }
 .title {
-  padding: 10px 20px 10px 10px;
-  font-size: 1.1em;
+  padding: 10px 10px 10px 10px;
+  font-size: 1.05em;
   color: #b75d69;
+  color: #d6cdea;
 }
 .desc {
   font-size: 0.8rem;
   color: #774c60;
   padding: 0px 20px 10px 10px;
 }
+@media (max-width: 768px) {
+  .anchor-container {
+    display: none;
+  }
+}
 
-.cards:hover {
-  scale: 1.05;
+/* Post page css */
+.post-container {
+  max-width: 1100px;
+  margin: 10vh auto;
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+  flex-direction: column;
+}
+img {
+  width: 850px;
+  height: 500px;
+  border-radius: 20px;
+}
+.post-image {
+  margin: 3vh auto;
+  border: 2px solid #eacdc2;
+  border-radius: 20px;
+  /* margin-left: 150px; */
+}
+.post-title {
+  font-size: 2.5em;
+  color: #b75d69;
+  padding: 10px;
+  letter-spacing: 0.04em;
+  /* color: #d6cdea; */
+}
+.author {
+  font-size: 0.5em;
+}
+.post-desc {
+  color: #774c60;
+  padding: 10px;
+  font-size: 1.2em;
+  letter-spacing: 0.04em;
+  line-height: 1.5em;
+  /* color: #eacdc2fe; */
 }
