@@ -3,8 +3,6 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const mongoose = require("mongoose");
-// const initialposts = require("../Assets/blog_posts");
-// const { nextTick } = require("process");
 
 //using cloudinary to handle image uploads
 const cloudinary = require("cloudinary").v2;
