@@ -1,9 +1,7 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const path = require("path");
-const dotenv = require("dotenv").config({
-  path: path.resolve(__dirname, "../.env"),
-});
 const mongoose = require("mongoose");
 // const initialposts = require("../Assets/blog_posts");
 // const { nextTick } = require("process");
@@ -40,7 +38,7 @@ mongoose
 //Creating schema
 const blogSchema = new mongoose.Schema({
   author: String,
-  // password: String,
+  password: String,
   image: String,
   title: String,
   content: { para1: String, para2: String, para3: String },
@@ -66,13 +64,10 @@ app.get("/posts", async (req, res) => {
 
 // Write Form Route
 app.post("/posts", upload.single("listingImage"), async (req, res) => {
-  // const formData = await req.FormData();
-  // console.log(JSON.stringify(req.file));
-  console.log(req);
-  // console.log(req.body);
-  // console.dir(req.file, { depth: null });
+  console.log(req.file.path);
   const blog = new Blog({
     author: req.body.author,
+    password: req.body.password,
     image: req.file.path,
     title: req.body.title,
     content: {
@@ -83,7 +78,6 @@ app.post("/posts", upload.single("listingImage"), async (req, res) => {
   });
   try {
     await blog.save();
-    res.json(blog); // Send the blog object as JSON
   } catch (err) {
     console.log(err);
     res.status(500).send("Error saving the blog post");
