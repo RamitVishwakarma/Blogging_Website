@@ -11,8 +11,11 @@ cloudinary.config({
   api_key: process.env.API_KEY,
   api_secret: process.env.API_SECRET,
 });
+
 const { CloudinaryStorage } = require("multer-storage-cloudinary");
+
 const multer = require("multer");
+
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
@@ -20,6 +23,7 @@ const storage = new CloudinaryStorage({
     allowedFormats: ["png", "jpg", "jpeg"],
   },
 });
+
 const upload = multer({ storage: storage });
 
 app.use(express.json());
